@@ -1,1 +1,1 @@
-export * from './propertyRoutes';
+export * from './PropertyRoutes';
