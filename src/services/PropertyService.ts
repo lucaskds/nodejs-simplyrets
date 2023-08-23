@@ -7,7 +7,7 @@ import QueryString from 'qs';
 export class PropertyService {
   constructor(private propertyRepository = PropertyRepository) {}
 
-  public async create(property: Property): Promise<PropertyDTO> {
+  async create(property: Property): Promise<PropertyDTO> {
     const newProperty = this.propertyRepository.create(property);
     return this.propertyRepository.save(newProperty);
   }
