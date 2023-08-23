@@ -3,6 +3,7 @@ import { validationResult } from 'express-validator';
 import PropertyService from '../services/PropertyService';
 import { PropertyDTO } from '../dtos';
 
+// Add Controller to follow an MVC approach
 export class PropertyController {
   async listProperties(
     req: Request,
@@ -10,9 +11,11 @@ export class PropertyController {
     next: NextFunction,
   ): Promise<any> {
     try {
+      // Validate request
       const errors = validationResult(req);
 
       if (!errors.isEmpty()) {
+        // Return 404 with validation errors
         return res.status(400).json({ errors: errors.array() });
       }
 
@@ -34,9 +37,11 @@ export class PropertyController {
     next: NextFunction,
   ): Promise<any> {
     try {
+      // Validate request
       const errors = validationResult(req);
 
       if (!errors.isEmpty()) {
+        // Return 404 with validation errors
         return res.status(400).json({ errors: errors.array() });
       }
 
@@ -56,9 +61,11 @@ export class PropertyController {
     next: NextFunction,
   ): Promise<any> {
     try {
+      // Validate request
       const errors = validationResult(req);
 
       if (!errors.isEmpty()) {
+        // Return 404 with validation errors
         return res.status(400).json({ errors: errors.array() });
       }
 
@@ -76,9 +83,11 @@ export class PropertyController {
     next: NextFunction,
   ): Promise<any> {
     try {
+      // Validate request
       const errors = validationResult(req);
 
       if (!errors.isEmpty()) {
+        // Return 404 with validation errors
         return res.status(400).json({ errors: errors.array() });
       }
 
@@ -99,9 +108,11 @@ export class PropertyController {
     next: NextFunction,
   ): Promise<any> {
     try {
+      // Validate request
       const errors = validationResult(req);
 
       if (!errors.isEmpty()) {
+        // Return 404 with validation errors
         return res.status(400).json({ errors: errors.array() });
       }
 

@@ -16,6 +16,7 @@ export class PropertyService {
     const property = await this.propertyRepository.findOneBy({ id });
 
     if (!property) {
+      // Throw error when no property is found
       throw new CustomError({
         code: 'PROPERTY_NOT_FOUND',
         message: 'Property not found.',
@@ -31,6 +32,7 @@ export class PropertyService {
     updatedProperty: UpdatePropertyDTO,
   ): Promise<PropertyDTO> {
     if (!(await this.propertyRepository.exist({ where: { id } }))) {
+      // Throw error when no property is found
       throw new CustomError({
         code: 'PROPERTY_NOT_FOUND',
         message: 'Property not found.',
@@ -50,6 +52,7 @@ export class PropertyService {
       return {};
     }
 
+    // Throw error when no property is found
     throw new CustomError({
       code: 'PROPERTY_NOT_FOUND',
       message: 'Property not found.',

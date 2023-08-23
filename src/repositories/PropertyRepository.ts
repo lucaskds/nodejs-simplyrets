@@ -3,6 +3,7 @@ import { FilterDTO, PropertyDTO } from '../dtos';
 import AppDataSource from '../dataSource';
 
 export const PropertyRepository = AppDataSource.getRepository(Property).extend({
+  // Add custom repository method for improved filters
   async search(filters: FilterDTO): Promise<PropertyDTO[]> {
     const queryBuilder = this.createQueryBuilder('property').select([
       'property.id as id',
