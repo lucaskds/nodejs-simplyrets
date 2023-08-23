@@ -107,7 +107,7 @@ export class PropertyController {
 
       await PropertyService.delete(parseInt(req.params.id));
 
-      return res.status(200);
+      return res.status(204).send();
     } catch (e) {
       next(e);
     }
