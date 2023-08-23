@@ -56,12 +56,12 @@ export const PropertyRepository = AppDataSource.getRepository(Property).extend({
     }
 
     if (filters.type) {
-      queryBuilder.andWhere('property.type = :type', {
+      queryBuilder.andWhere('property.type = :type COLLATE NOCASE', {
         type: filters.type,
       });
     }
 
-    queryBuilder.skip(filters.offset).take(filters.limit);
+    queryBuilder.orderBy('id').skip(filters.offset).take(filters.limit);
 
     return queryBuilder.execute();
   },
